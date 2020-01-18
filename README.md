@@ -13,7 +13,7 @@ npm install --save @themikeandersen/react-card-lists
 ## Use CDN to get CSS file
 You can use react-card-lists as a stand-alone CSS file by using the code below:
 
-```bash
+```html
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/WhereCanI/react-card-lists/src/cardStyle.css" />
 ```
 
@@ -151,5 +151,5 @@ import { CardList } from '@themikeandersen/react-card-lists'
 ## License
 
 MIT © [TheMikeAndersen](https://github.com/WhereCanI)
-Visit my website at: [https://themikeandersen.comm](https://themikeandersen.com)
+Visit my website at: [https://themikeandersen.com](https://themikeandersen.com)
 
