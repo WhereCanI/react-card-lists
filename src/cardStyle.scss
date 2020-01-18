@@ -10,6 +10,19 @@
     flex-wrap: $Flex_Wrap;
 }
 
+@mixin SecuritySmallest() {
+    @media screen and (max-width: $BreakSmallest) {
+        flex: 0 1 100%;
+        width: 100%;
+        margin-left: 0 !important;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
 // RESPONSIVE VARIABLES
 $BreakSmallest: 321px;
 $BreakSmall: 480px;
@@ -83,6 +96,73 @@ img {
 
     // LIST TYPES
     // - Gives the lists different media breaks depending on device and screen
+    &.Break4321 {
+        > li {
+            flex: 0 1 calc(100% / 4 - 15px);
+            width: calc(100% / 4 - 15px);
+            margin-left: calc(15px + (15px / 3));
+            margin-bottom: calc(15px + (15px / 3));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: $BreakLarge) {
+                flex: 0 1 calc(100% / 3 - 15px);
+                width: calc(100% / 3 - 15px);
+                margin-left: calc(15px + (15px / 2));
+                margin-bottom: calc(15px + (15px / 2));
+
+                &:nth-child(4n+1) {
+                    margin-left: 15px;
+                }
+
+                &:nth-child(3n+1) {
+                    margin-left: 0;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (max-width: $BreakMedium) {
+                flex: 0 1 calc(100% / 2 - (15px / 2));
+                width: calc(100% / 2 - (15px / 2));
+                margin-left: 15px;
+                margin-bottom: 15px;
+
+                &:nth-child(3n+1) {
+                    margin-left: 15px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (max-width: $BreakSmall) {
+                flex: 0 1 100%;
+                width: 100%;
+                margin-left: 0 !important;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // BREAK 4 TO 2 TO 1
     &.Break421 {
         > li {
             flex: 0 1 calc(100% / 4 - 15px);
@@ -215,8 +295,8 @@ img {
         }
     }
 
-     // BREAKS FROM 3 to 2
-     &.Break32 {
+    // BREAKS FROM 3 to 2
+    &.Break32 {
         > li {
             flex: 0 1 calc(100% / 3 - 15px);
             width: calc(100% / 3 - 15px);
@@ -251,9 +331,172 @@ img {
             }
         }
     }
-}
 
-// PRESET THEMES
-// - Verticallist
-// - Horizontallist
-// - ImageList
+    // BREAKS FROM 2 TO 1
+    &.Break21 {
+        > li {
+            flex: 0 1 calc(100% / 2 - (15px / 2));
+            width: calc(100% / 2 - (15px / 2));
+            margin-left: 15px;
+            margin-bottom: 15px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(2n+1) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: $BreakSmall) {
+                flex: 0 1 100%;
+                width: 100%;
+                margin-left: 0 !important;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // BREAK 5
+    &.Break5 {
+        > li {
+            flex: 0 1 calc(100% / 5 - 15px);
+            width: calc(100% / 5 - 15px);
+            margin-left: calc(15px + (15px / 4));
+            margin-bottom: calc(15px + (15px / 4));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(5n+1) {
+                margin-left: 0;
+            }
+
+            @include SecuritySmallest();
+        }
+    }
+
+    // BREAK 4
+    &.Break4 {
+        > li {
+            flex: 0 1 calc(100% / 4 - 15px);
+            width: calc(100% / 4 - 15px);
+            margin-left: calc(15px + (15px / 3));
+            margin-bottom: calc(15px + (15px / 3));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+
+            @include SecuritySmallest();
+        }
+    }
+
+    // BREAK 3
+    &.Break3 {
+        > li {
+            flex: 0 1 calc(100% / 3 - 15px);
+            width: calc(100% / 3 - 15px);
+            margin-left: calc(15px + (15px / 2));
+            margin-bottom: calc(15px + (15px / 2));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(3n+1) {
+                margin-left: 0;
+            }
+
+            @include SecuritySmallest();
+        }
+    }
+
+    // BREAK 2
+    &.Break2 {
+        > li {
+            flex: 0 1 calc(100% / 2 - (15px / 2));
+            width: calc(100% / 2 - (15px / 2));
+            margin-left: 15px;
+            margin-bottom: 15px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(2n+1) {
+                margin-left: 0;
+            }
+
+            @include SecuritySmallest();
+        }
+    }
+
+    // BREAK 1
+    &.Break1 {
+        > li {
+            flex: 0 1 100%;
+            width: 100%;
+            margin-left: 0 !important;
+            margin-bottom: 15px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // PRESET THEMES
+    // - Themes to preset either vertical or horizontal
+    &.VerticalList {
+        @extend .RespCardList;
+    }
+
+    &.HorizontalList {
+        > li {
+            > a, > div {
+                div:first-child, .ImageWrapper {
+                    flex: 0 0 180px;
+                    width: 180px;
+                    margin-right: 10px;
+
+                    figure, picture {
+                        margin: 0
+
+                        img {
+                            margin: 0;
+                        }
+                    }
+                }
+
+                div:last-child, .DescriptionWrapper {
+                    flex: 0 1 calc(100% - 190px);
+                    width: calc(100% - 190px);
+
+                    > h1, > h2, > h3, > h4, .ItemTitle {
+                        box-sizing: border-box;
+                        flex: 0 1 100%;
+                        width: 100%;
+                        margin: 0 0 7px 0;
+                    }
+        
+                    p, span, .ItemDesc {
+                        box-sizing: border-box;
+                        flex: 0 1 100%;
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

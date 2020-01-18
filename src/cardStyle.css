@@ -30,7 +30,7 @@ img {
   width: 100%;
 }
 
-.RespCardList {
+.RespCardList, .RespCardList.VerticalList {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   list-style: none;
@@ -55,12 +55,12 @@ img {
   border: 0;
 }
 
-.RespCardList > li {
+.RespCardList > li, .RespCardList.VerticalList > li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.RespCardList > li > a, .RespCardList > li > div {
+.RespCardList > li > a, .RespCardList.VerticalList > li > a, .RespCardList > li > div, .RespCardList.VerticalList > li > div {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -83,11 +83,11 @@ img {
   text-decoration: none;
 }
 
-.RespCardList > li > a figure, .RespCardList > li > a picture, .RespCardList > li > div figure, .RespCardList > li > div picture {
+.RespCardList > li > a figure, .RespCardList.VerticalList > li > a figure, .RespCardList > li > a picture, .RespCardList.VerticalList > li > a picture, .RespCardList > li > div figure, .RespCardList.VerticalList > li > div figure, .RespCardList > li > div picture, .RespCardList.VerticalList > li > div picture {
   margin-bottom: 5px;
 }
 
-.RespCardList > li > a > h1, .RespCardList > li > a > h2, .RespCardList > li > a > h3, .RespCardList > li > a > h4, .RespCardList > li > a .ItemTitle, .RespCardList > li > div > h1, .RespCardList > li > div > h2, .RespCardList > li > div > h3, .RespCardList > li > div > h4, .RespCardList > li > div .ItemTitle {
+.RespCardList > li > a > h1, .RespCardList.VerticalList > li > a > h1, .RespCardList > li > a > h2, .RespCardList.VerticalList > li > a > h2, .RespCardList > li > a > h3, .RespCardList.VerticalList > li > a > h3, .RespCardList > li > a > h4, .RespCardList.VerticalList > li > a > h4, .RespCardList > li > a .ItemTitle, .RespCardList > li > div > h1, .RespCardList.VerticalList > li > div > h1, .RespCardList > li > div > h2, .RespCardList.VerticalList > li > div > h2, .RespCardList > li > div > h3, .RespCardList.VerticalList > li > div > h3, .RespCardList > li > div > h4, .RespCardList.VerticalList > li > div > h4, .RespCardList > li > div .ItemTitle {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-flex: 0;
@@ -97,7 +97,7 @@ img {
   margin: 0 0 7px 0;
 }
 
-.RespCardList > li > a p, .RespCardList > li > a span, .RespCardList > li > a .ItemDesc, .RespCardList > li > div p, .RespCardList > li > div span, .RespCardList > li > div .ItemDesc {
+.RespCardList > li > a p, .RespCardList.VerticalList > li > a p, .RespCardList > li > a span, .RespCardList.VerticalList > li > a span, .RespCardList > li > a .ItemDesc, .RespCardList > li > div p, .RespCardList.VerticalList > li > div p, .RespCardList > li > div span, .RespCardList.VerticalList > li > div span, .RespCardList > li > div .ItemDesc {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-box-flex: 0;
@@ -105,6 +105,77 @@ img {
           flex: 0 1 100%;
   width: 100%;
   margin: 0;
+}
+
+.RespCardList.Break4321 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% / 4 - 15px);
+          flex: 0 1 calc(100% / 4 - 15px);
+  width: calc(100% / 4 - 15px);
+  margin-left: calc(15px + (15px / 3));
+  margin-bottom: calc(15px + (15px / 3));
+}
+
+.RespCardList.Break4321 > li:first-child {
+  margin-left: 0;
+}
+
+.RespCardList.Break4321 > li:nth-child(4n+1) {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .RespCardList.Break4321 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(100% / 3 - 15px);
+            flex: 0 1 calc(100% / 3 - 15px);
+    width: calc(100% / 3 - 15px);
+    margin-left: calc(15px + (15px / 2));
+    margin-bottom: calc(15px + (15px / 2));
+  }
+  .RespCardList.Break4321 > li:nth-child(4n+1) {
+    margin-left: 15px;
+  }
+  .RespCardList.Break4321 > li:nth-child(3n+1) {
+    margin-left: 0;
+  }
+  .RespCardList.Break4321 > li:first-child {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .RespCardList.Break4321 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(100% / 2 - (15px / 2));
+            flex: 0 1 calc(100% / 2 - (15px / 2));
+    width: calc(100% / 2 - (15px / 2));
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break4321 > li:nth-child(3n+1) {
+    margin-left: 15px;
+  }
+  .RespCardList.Break4321 > li:first-child {
+    margin-left: 0;
+  }
+  .RespCardList.Break4321 > li:nth-child(2n+1) {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .RespCardList.Break4321 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break4321 > li:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .RespCardList.Break421 > li {
@@ -281,5 +352,213 @@ img {
   .RespCardList.Break32 > li:nth-child(2n+1) {
     margin-left: 0;
   }
+}
+
+.RespCardList.Break21 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% / 2 - (15px / 2));
+          flex: 0 1 calc(100% / 2 - (15px / 2));
+  width: calc(100% / 2 - (15px / 2));
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.RespCardList.Break21 > li:first-child {
+  margin-left: 0;
+}
+
+.RespCardList.Break21 > li:nth-child(2n+1) {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .RespCardList.Break21 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break21 > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.RespCardList.Break5 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% / 5 - 15px);
+          flex: 0 1 calc(100% / 5 - 15px);
+  width: calc(100% / 5 - 15px);
+  margin-left: calc(15px + (15px / 4));
+  margin-bottom: calc(15px + (15px / 4));
+}
+
+.RespCardList.Break5 > li:first-child {
+  margin-left: 0;
+}
+
+.RespCardList.Break5 > li:nth-child(5n+1) {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 321px) {
+  .RespCardList.Break5 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break5 > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.RespCardList.Break4 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% / 4 - 15px);
+          flex: 0 1 calc(100% / 4 - 15px);
+  width: calc(100% / 4 - 15px);
+  margin-left: calc(15px + (15px / 3));
+  margin-bottom: calc(15px + (15px / 3));
+}
+
+.RespCardList.Break4 > li:first-child {
+  margin-left: 0;
+}
+
+.RespCardList.Break4 > li:nth-child(4n+1) {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 321px) {
+  .RespCardList.Break4 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break4 > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.RespCardList.Break3 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% / 3 - 15px);
+          flex: 0 1 calc(100% / 3 - 15px);
+  width: calc(100% / 3 - 15px);
+  margin-left: calc(15px + (15px / 2));
+  margin-bottom: calc(15px + (15px / 2));
+}
+
+.RespCardList.Break3 > li:first-child {
+  margin-left: 0;
+}
+
+.RespCardList.Break3 > li:nth-child(3n+1) {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 321px) {
+  .RespCardList.Break3 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break3 > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.RespCardList.Break2 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% / 2 - (15px / 2));
+          flex: 0 1 calc(100% / 2 - (15px / 2));
+  width: calc(100% / 2 - (15px / 2));
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.RespCardList.Break2 > li:first-child {
+  margin-left: 0;
+}
+
+.RespCardList.Break2 > li:nth-child(2n+1) {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 321px) {
+  .RespCardList.Break2 > li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+  }
+  .RespCardList.Break2 > li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.RespCardList.Break1 > li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  width: 100%;
+  margin-left: 0 !important;
+  margin-bottom: 15px;
+}
+
+.RespCardList.Break1 > li:last-child {
+  margin-bottom: 0;
+}
+
+.RespCardList.HorizontalList > li > a div:first-child, .RespCardList.HorizontalList > li > a .ImageWrapper, .RespCardList.HorizontalList > li > div div:first-child, .RespCardList.HorizontalList > li > div .ImageWrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 180px;
+          flex: 0 0 180px;
+  width: 180px;
+  margin-right: 10px;
+}
+
+.RespCardList.HorizontalList > li > a div:first-child figure, .RespCardList.HorizontalList > li > a div:first-child picture, .RespCardList.HorizontalList > li > a .ImageWrapper figure, .RespCardList.HorizontalList > li > a .ImageWrapper picture, .RespCardList.HorizontalList > li > div div:first-child figure, .RespCardList.HorizontalList > li > div div:first-child picture, .RespCardList.HorizontalList > li > div .ImageWrapper figure, .RespCardList.HorizontalList > li > div .ImageWrapper picture {
+  margin: 0 img;
+  margin-margin: 0;
+}
+
+.RespCardList.HorizontalList > li > a div:last-child, .RespCardList.HorizontalList > li > a .DescriptionWrapper, .RespCardList.HorizontalList > li > div div:last-child, .RespCardList.HorizontalList > li > div .DescriptionWrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 calc(100% - 190px);
+          flex: 0 1 calc(100% - 190px);
+  width: calc(100% - 190px);
+}
+
+.RespCardList.HorizontalList > li > a div:last-child > h1, .RespCardList.HorizontalList > li > a div:last-child > h2, .RespCardList.HorizontalList > li > a div:last-child > h3, .RespCardList.HorizontalList > li > a div:last-child > h4, .RespCardList.HorizontalList > li > a div:last-child .ItemTitle, .RespCardList.HorizontalList > li > a .DescriptionWrapper > h1, .RespCardList.HorizontalList > li > a .DescriptionWrapper > h2, .RespCardList.HorizontalList > li > a .DescriptionWrapper > h3, .RespCardList.HorizontalList > li > a .DescriptionWrapper > h4, .RespCardList.HorizontalList > li > a .DescriptionWrapper .ItemTitle, .RespCardList.HorizontalList > li > div div:last-child > h1, .RespCardList.HorizontalList > li > div div:last-child > h2, .RespCardList.HorizontalList > li > div div:last-child > h3, .RespCardList.HorizontalList > li > div div:last-child > h4, .RespCardList.HorizontalList > li > div div:last-child .ItemTitle, .RespCardList.HorizontalList > li > div .DescriptionWrapper > h1, .RespCardList.HorizontalList > li > div .DescriptionWrapper > h2, .RespCardList.HorizontalList > li > div .DescriptionWrapper > h3, .RespCardList.HorizontalList > li > div .DescriptionWrapper > h4, .RespCardList.HorizontalList > li > div .DescriptionWrapper .ItemTitle {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  width: 100%;
+  margin: 0 0 7px 0;
+}
+
+.RespCardList.HorizontalList > li > a div:last-child p, .RespCardList.HorizontalList > li > a div:last-child span, .RespCardList.HorizontalList > li > a div:last-child .ItemDesc, .RespCardList.HorizontalList > li > a .DescriptionWrapper p, .RespCardList.HorizontalList > li > a .DescriptionWrapper span, .RespCardList.HorizontalList > li > a .DescriptionWrapper .ItemDesc, .RespCardList.HorizontalList > li > div div:last-child p, .RespCardList.HorizontalList > li > div div:last-child span, .RespCardList.HorizontalList > li > div div:last-child .ItemDesc, .RespCardList.HorizontalList > li > div .DescriptionWrapper p, .RespCardList.HorizontalList > li > div .DescriptionWrapper span, .RespCardList.HorizontalList > li > div .DescriptionWrapper .ItemDesc {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  width: 100%;
+  margin: 0;
 }
 /*# sourceMappingURL=cardStyle.css.map */
