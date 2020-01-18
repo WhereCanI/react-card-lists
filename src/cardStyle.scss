@@ -1,0 +1,259 @@
+@mixin Flex($Flex_Direction, $Justify_Content, $Align_Items, $Flex_Wrap) {
+    display: -webkit-flex; 
+    display: flex;
+    -webkit-flex-direction: $Flex_Direction;
+    flex-direction: $Flex_Direction;
+    justify-content: $Justify_Content;
+    -webkit-align-items: $Align_Items;
+    align-items: $Align_Items;
+    -webkit-flex-wrap: $Flex_Wrap;
+    flex-wrap: $Flex_Wrap;
+}
+
+// RESPONSIVE VARIABLES
+$BreakSmallest: 321px;
+$BreakSmall: 480px;
+$BreakMediumSmall: 550px;
+$BreakMedium: 640px;
+$BreakMediumLarge: 720px;
+$BreakLarge: 850px;
+$BreakLarger: 980px;
+$BreakMax: 1024px;
+
+picture {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    flex: 0 1 100%;
+    width: 100%;
+}
+
+figure {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    flex: 0 1 100%;
+    width: 100%;
+}
+
+img {
+    box-sizing: border-box;
+    display: block;
+    flex: 0 1 100%;
+    width: 100%;
+}
+
+.RespCardList {
+    box-sizing: border-box;
+    list-style: none;
+    @include Flex(row, flex-start, flex-start, wrap);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    > li {
+        box-sizing: border-box;
+        > a, > div {
+            box-sizing: border-box;
+            width: 100%;
+            @include Flex(row, flex-start, stretch, wrap);
+            padding: 10px;
+            text-decoration: none;
+
+            figure, picture {
+                margin-bottom: 5px;
+            }
+
+            > h1, > h2, > h3, > h4, .ItemTitle {
+                box-sizing: border-box;
+                flex: 0 1 100%;
+                width: 100%;
+                margin: 0 0 7px 0;
+            }
+
+            p, span, .ItemDesc {
+                box-sizing: border-box;
+                flex: 0 1 100%;
+                width: 100%;
+                margin: 0;
+            }
+        }
+    }
+
+    // LIST TYPES
+    // - Gives the lists different media breaks depending on device and screen
+    &.Break421 {
+        > li {
+            flex: 0 1 calc(100% / 4 - 15px);
+            width: calc(100% / 4 - 15px);
+            margin-left: calc(15px + (15px / 3));
+            margin-bottom: calc(15px + (15px / 3));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: $BreakMediumLarge) {
+                flex: 0 1 calc(100% / 2 - (15px / 2));
+                width: calc(100% / 2 - (15px / 2));
+                margin-left: 15px;
+                margin-bottom: 15px;
+
+                &:nth-child(4n+1) {
+                    margin-left: 15px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (max-width: $BreakSmall) {
+                flex: 0 1 100%;
+                width: 100%;
+                margin-left: 0 !important;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    // BREAKS FROM 4 to 2
+    &.Break42 {
+        > li {
+            flex: 0 1 calc(100% / 4 - 15px);
+            width: calc(100% / 4 - 15px);
+            margin-left: calc(15px + (15px / 3));
+            margin-bottom: calc(15px + (15px / 3));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: $BreakMediumLarge) {
+                flex: 0 1 calc(100% / 2 - (15px / 2));
+                width: calc(100% / 2 - (15px / 2));
+                margin-left: 15px;
+                margin-bottom: 15px;
+
+                &:nth-child(4n+1) {
+                    margin-left: 15px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    // BREAKS FROM 3 to 2 to 1
+    &.Break321 {
+        > li {
+            flex: 0 1 calc(100% / 3 - 15px);
+            width: calc(100% / 3 - 15px);
+            margin-left: calc(15px + (15px / 2));
+            margin-bottom: calc(15px + (15px / 2));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(3n+1) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: $BreakMediumLarge) {
+                flex: 0 1 calc(100% / 2 - (15px / 2));
+                width: calc(100% / 2 - (15px / 2));
+                margin-left: 15px;
+                margin-bottom: 15px;
+
+                &:nth-child(3n+1) {
+                    margin-left: 15px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media screen and (max-width: $BreakSmall) {
+                flex: 0 1 100%;
+                width: 100%;
+                margin-left: 0 !important;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+     // BREAKS FROM 3 to 2
+     &.Break32 {
+        > li {
+            flex: 0 1 calc(100% / 3 - 15px);
+            width: calc(100% / 3 - 15px);
+            margin-left: calc(15px + (15px / 2));
+            margin-bottom: calc(15px + (15px / 2));
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:nth-child(3n+1) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: $BreakMediumLarge) {
+                flex: 0 1 calc(100% / 2 - (15px / 2));
+                width: calc(100% / 2 - (15px / 2));
+                margin-left: 15px;
+                margin-bottom: 15px;
+
+                &:nth-child(3n+1) {
+                    margin-left: 15px;
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:nth-child(2n+1) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+// PRESET THEMES
+// - Verticallist
+// - Horizontallist
+// - ImageList
