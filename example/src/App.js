@@ -1,12 +1,12 @@
 import React from 'react'
-import { useMyHook } from '@themikeandersen/react-card-lists'
+import { CardList, ListItem } from '@themikeandersen/react-card-lists'
 
 const App = () => {
-  const example = useMyHook()
   return (
-    <div>
-      {example}
-    </div>
+    <CardList listType="Break421">
+      <ListItem>First One</ListItem>
+      <ListItem>The Second One</ListItem>
+    </CardList>
   )
 }
 export default App
