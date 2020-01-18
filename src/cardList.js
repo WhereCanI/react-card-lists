@@ -39,9 +39,6 @@ export default function CardList(props) {
             case "HorizontalList":
                 return `${pre} ${presetTheme} ${listType}`;
                 break;
-            case "ImageList":
-                return `${pre} ${presetTheme} ${listType}`
-                break;
             default: return `${pre} VerticalList ${listType}`;
         };
     };
