@@ -4,7 +4,7 @@ import { CardList, ListItem, Anchor, Image, ItemTitle, ItemDescription, ImageWra
 const App = () => {
   return (
     <div>
-      <CardList listType="Break4321" presetTheme="VerticalList">
+      <CardList listType="Break5" presetTheme="VerticalList">
       <ListItem>
         <Anchor href="ToListItem">
           <Image imageSrc="https://via.placeholder.com/1600x900" imageAlt="Default Image" />
@@ -49,7 +49,7 @@ const App = () => {
       </ListItem>
     </CardList>
 
-    <CardList listType="Break4321" presetTheme="HorizontalList">
+    <CardList listType="Break5" presetTheme="HorizontalList">
       <ListItem>
         <Anchor href="ToListItem">
           <div>

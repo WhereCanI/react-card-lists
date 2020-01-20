@@ -118,7 +118,7 @@ img {
                 margin-bottom: calc(15px + (15px / 2));
 
                 &:nth-child(4n+1) {
-                    margin-left: 15px;
+                    margin-left: calc(15px + (15px / 2));
                 }
 
                 &:nth-child(3n+1) {
